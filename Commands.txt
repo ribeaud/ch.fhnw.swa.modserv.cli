@@ -1,0 +1,11 @@
+mkdir mods
+mkdir jars
+javac -d mods --module-source-path src -m service.framework
+jar -c -f jars/service.framework.jar -C mods/service.framework .
+javac -d mods --module-source-path src -p jars -m service.client
+jar -c -f jars/service.client.jar --main-class=service.Demo -C mods/service.client .
+javac -d mods --module-source-path src -m service.impl1
+jar -c -f jars/service.impl1.jar -C mods/service.impl1 .
+javac -d mods --module-source-path src -m service.impl2
+jar -c -f jars/service.impl2.jar -C mods/service.impl2 .
+java -p jars -m service.client
