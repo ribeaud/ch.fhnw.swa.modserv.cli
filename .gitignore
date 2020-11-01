@@ -2,3 +2,5 @@
 /.idea
 /jars
 /mods
+/out
+*.iml
