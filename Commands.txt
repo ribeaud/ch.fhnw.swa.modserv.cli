@@ -7,7 +7,7 @@ javac -d mods --module-source-path src -m service.framework
 jar -c -f jars/service.framework.jar -C mods/service.framework .
 
 # service.client
-javac -d mods --module-source-path src -p jars -m service.client
+javac -d mods --module-source-path src -m service.client
 jar -c -f jars/service.client.jar --main-class=service.Demo -C mods/service.client .
 
 # service.impl1
